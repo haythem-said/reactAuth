@@ -5,8 +5,10 @@ var logger = require('morgan');
 require("dotenv").config()
 const mongoose=require("mongoose")
 var indexRouter = require('./routes/index');
-
+const passport=require('passport')
 var app = express();
+app.use(passport.initialize())
+require('./security/passport')(passport)
 mongoose.connect(process.env.MONGOOSE).then(()=>console.log("connected")).catch((err)=>console.log(err.message))
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,5 +1,8 @@
 const UserModel = require("../models/user.models");
 const ValidateRegister = require("../validation/register");
+const ValidateLogin = require("../validation/login");
+const jwt = require("jsonwebtoken");
+
 const bcrypt = require("bcryptjs");
 const Register = async (req, res) => {
   const { errors, isValid } = ValidateRegister(req.body);
@@ -24,6 +27,54 @@ const Register = async (req, res) => {
     res.status(404).json(error.message);
   }
 };
+const Login = async (req, res) => {
+  const { errors, isValid } = ValidateLogin(req.body);
+  try {
+    if (!isValid) {
+      res.status(404).json(errors);
+    } else {
+      UserModel.findOne({ email: req.body.email }).then((user) => {
+        if (!user) {
+          errors.email = "not found user";
+          res.status(404).json(errors);
+        } else {
+          bcrypt.compare(req.body.password, user.password).then((isMatch) => {
+            if (!isMatch) {
+              errors.password = "incorrect information";
+              res.status(404).json(errors);
+            } else {
+              var token = jwt.sign(
+                {
+                  id: user._id,
+                  name: user.name,
+                  email: user.email,
+                  role: user.role,
+                },
+                process.env.PRIVATE_KEY,
+                { expiresIn: "1h" }
+              );
+              res.status(200).json({
+                message: "success",
+                token: "Bearer " + token,
+              });
+            }
+          });
+        }
+      });
+    }
+  } catch (error) {
+    res.status(404).json(error.message);
+  }
+};
+const Test = (req, res) => {
+  res.send("user");
+};
+const Admin = (req, res) => {
+  res.send("admin");
+};
 module.exports = {
   Register,
+  Login,
+  Test,
+  Admin,
 };
