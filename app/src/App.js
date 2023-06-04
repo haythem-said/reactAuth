@@ -9,10 +9,21 @@ import Register from "./pages/Register";
 import Admin from "./pages/Admin";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginRouter from "./componentsRouter/LoginRouter";
+import { useSelector } from "react-redux";
+import { SET_USER } from "./redux/types";
+import jwtDecode from "jwt-decode";
+import store  from "./redux/store";
+if (localStorage.jwt) {
+  const decode = jwtDecode(localStorage.jwt);
+  store.dispatch({ type: SET_USER, payload: decode });
+}
+
 function App() {
+  const selectorUser = useSelector((state) => state.auth);
+  console.log("selectorUser", selectorUser.user.role);
   const user = {
-    isConnected: false,
-    role: "USER",
+    isConnected: selectorUser.isConnected,
+    role: selectorUser.user.role,
   };
   return (
     <div>
