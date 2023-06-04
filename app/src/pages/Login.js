@@ -3,20 +3,27 @@ import {Link} from 'react-router-dom'
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [form,setForm]=useState('')
+   const handelLogin=(e)=>{
+        setForm({
+          ...form,
+          [e.target.name]:e.target.value
+        })
+   }
+  // const handleUsernameChange = (e) => {
+  //   setUsername(e.target.value);
+  // };
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  // const handlePasswordChange = (e) => {
+  //   setPassword(e.target.value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form)
     // Logique de traitement de la connexion ici
-    console.log('Nom d\'utilisateur :', username);
-    console.log('Mot de passe :', password);
+    // console.log('Nom d\'utilisateur :', username);
+    // console.log('Mot de passe :', password);
   };
 
   return (
@@ -28,8 +35,7 @@ const Login = () => {
           type="text"
           id="username"
           name="username"
-          value={username}
-          onChange={handleUsernameChange}
+          onChange={handelLogin}
           required
         />
 
@@ -38,8 +44,7 @@ const Login = () => {
           type="password"
           id="password"
           name="password"
-          value={password}
-          onChange={handlePasswordChange}
+          onChange={handelLogin}
           required
         />
 

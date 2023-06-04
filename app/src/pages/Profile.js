@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Profile = () => {
-  const [phone, setPhone] = useState('');
-  const [postalCode, setPostalCode] = useState('');
-  const [country, setCountry] = useState('');
-  const [bio, setBio] = useState('');
+  const [phone, setPhone] = useState("");
+  const [adresse, setAdresse] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [country, setCountry] = useState("");
+  const [bio, setBio] = useState("");
 
   const handlePhoneChange = (e) => {
+    
     setPhone(e.target.value);
   };
 
@@ -21,14 +23,17 @@ const Profile = () => {
   const handleBioChange = (e) => {
     setBio(e.target.value);
   };
+  const handleAdresseChange = (e) => {
+    setAdresse(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logique de traitement de la mise à jour du profil ici
-    console.log('Numéro de téléphone :', phone);
-    console.log('Code postal :', postalCode);
-    console.log('Pays :', country);
-    console.log('Biographie :', bio);
+    console.log("Numéro de téléphone :", phone);
+    console.log("Code postal :", postalCode);
+    console.log("Pays :", country);
+    console.log("Biographie :", bio);
   };
 
   return (
@@ -61,7 +66,14 @@ const Profile = () => {
           value={country}
           onChange={handleCountryChange}
         />
-
+        <label htmlFor="adresse">adresse :</label>
+        <input
+          type="text"
+          id="adresse"
+          name="adresse"
+          value={adresse}
+          onChange={handleAdresseChange}
+        ></input>
         <label htmlFor="bio">Biographie :</label>
         <textarea
           id="bio"
