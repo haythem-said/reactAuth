@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { SET_USER } from "../redux/types";
 
 const Profile = () => {
   const [phone, setPhone] = useState("");
@@ -6,7 +8,6 @@ const Profile = () => {
   const [postalCode, setPostalCode] = useState("");
   const [country, setCountry] = useState("");
   const [bio, setBio] = useState("");
-
   const handlePhoneChange = (e) => {
     
     setPhone(e.target.value);
@@ -35,7 +36,16 @@ const Profile = () => {
     console.log("Pays :", country);
     console.log("Biographie :", bio);
   };
+  const dispatch=useDispatch()
 
+  const handleClick = () => {
+    localStorage.removeItem('jwt');
+    dispatch({
+      type: SET_USER,
+      payload: {}
+    });
+  };
+  
   return (
     <div className="container">
       <h1>Profil</h1>
@@ -83,6 +93,7 @@ const Profile = () => {
         ></textarea>
 
         <input type="submit" value="Enregistrer" />
+        <button className="logout-button" onClick={handleClick}>LogOut</button>
       </form>
     </div>
   );

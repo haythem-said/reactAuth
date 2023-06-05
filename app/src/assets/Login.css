@@ -1,50 +1,69 @@
-.container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333333;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: #666666;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    border: 0;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  .message {
-    margin-top: 20px;
-    text-align: center;
-    color: #999999;
-  }
-  
+.raws {
+  background-image: url("https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1678876738.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-pages {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.login-pages h2 {
+  font-size: 30px;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-fields {
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 400px;
+  height: 20px;
+  font-size: 20px;
+
+}
+
+.login-buttons {
+  margin-top: 20px;
+  margin-left: 56px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+  height: 35px;
+  font-size: 16px;
+}
+
+.login-buttons:hover {
+  background-color: #0056b3;
+}
+
+.messages {
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 25px;
+  color: #555;
+  padding-left: 30px;
+}
+
+.messages a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.messages a:hover {
+  text-decoration: underline;
+}

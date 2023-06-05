@@ -20,7 +20,6 @@ if (localStorage.jwt) {
 
 function App() {
   const selectorUser = useSelector((state) => state.auth);
-  console.log("selectorUser", selectorUser.user.role);
   const user = {
     isConnected: selectorUser.isConnected,
     role: selectorUser.user.role,

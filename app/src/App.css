@@ -1,4 +1,20 @@
-@import url("assets/Register.css");
-@import url("assets/Login.css");
-@import url("assets/Profile.css");
+/* @import url("assets/Register.css"); */
+/* @import url("assets/Login.css"); */
+/* @import url("assets/Profile.css"); */
 @import url('assets/Admin.css');
+
+/* .logout-button {
+    margin-top: 10px;
+    background-color: #685c5c;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff3333;
+  } */

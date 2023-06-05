@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from 'react-redux';
+import { SET_USER } from "../redux/types";
 const Admin = () => {
+  const dispatch=useDispatch()
+
+  const handleClick = () => {
+    localStorage.removeItem('jwt');
+    dispatch({
+      type: SET_USER,
+      payload: {}
+    });
+  };
+  
   return (
     <div className="container">
       <header className="header">
@@ -16,8 +27,8 @@ const Admin = () => {
           </li>
         </ul>
         <div className="user-profile">
-          <Link className="logout-btn" to="/login">
-            Logout
+          <Link onClick={handleClick} className="logout-btn" to="/login">
+             LogOut
           </Link>
         </div>
       </nav>
