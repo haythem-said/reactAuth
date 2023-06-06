@@ -7,9 +7,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const errorState = useSelector((state) => state.errors);
-  console.log(errorState);
   const [errors, setErrors] = useState("");
-
+  console.log("**********", errors);
   const [form, setForm] = useState("");
   const handelLogin = (e) => {
     setForm({
@@ -29,6 +28,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(LoginAction(form, navigate));
+    if (errorState.length > 0) {
+    }
   };
 
   return (
@@ -45,7 +46,11 @@ const Login = () => {
             onChange={handelLogin}
             required
           />
-
+          {errors.password || errors.email ? (
+            <p className="incorrect-info">Incorrect Information</p>
+          ) : (
+            ""
+          )}
           <label htmlFor="password">Password:</label>
           <input
             className="input-fields"
@@ -55,11 +60,14 @@ const Login = () => {
             onChange={handelLogin}
             required
           />
+          {errors.password || errors.email ? (
+            <p className="incorrect-info">Incorrect Information</p>
+          ) : (
+            ""
+          )}
           <input type="submit" className="login-buttons" value="Se connecter" />
         </form>
-        
-        
-     
+
         <p className="messages">
           Pas encore inscrit ? <Link to="/register">S'inscrire</Link>
         </p>

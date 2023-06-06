@@ -31,9 +31,13 @@
   width: 400px;
   height: 20px;
   font-size: 20px;
-
 }
-
+.incorrect-info {
+  color: #ff0000;
+  font-weight: bold;
+  text-decoration: line-through;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 .login-buttons {
   margin-top: 20px;
   margin-left: 56px;

@@ -1,4 +1,4 @@
-.container {
+/* .container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -45,4 +45,7 @@
   input[type="submit"]:hover {
     background-color: #45a049;
   }
-  
+   */
+   .chat{
+    display: flex;
+   }
