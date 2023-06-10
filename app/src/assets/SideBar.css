@@ -1,97 +1,105 @@
 .sideBar {
-    display: flex;
-    flex-direction: column;
-    background-color: #2f3135;
-    height: 100vh;
-    width: 300px;
-  }
-  .sideBar__top {
-    display: flex;
-    justify-content: space-between;
-    background-color: #2f3135;
-    align-items: center;
-    padding: 20px;
-    color: white;
-    border-bottom: 3px solid #56575a;
-  }
-  .sidebar__channels {
-    flex: 1;
-  }
-  .sideBar__AddChannel {
-    cursor: pointer;
-  }
-  
-  .sideBar__AddChannel:hover {
-    color: white;
-  }
-  .sideBar__channelsHeader {
-    display: flex;
-    justify-content: space-between;
-    background-color: #2f3135;
-    align-items: center;
-    padding: 18px;
-    color: gray;
-  }
-  .sideBar__Header {
-    display: flex;
-    align-items: center;
-  }
-  .sidebarChannel:hover > h4 {
-    color: white;
-    background-color: #56575a;
-  }
-  .sidebarChannel > h4 {
-    padding-left: 25px;
-    align-items: center;
-    display: flex;
-    color: gray;
-    cursor: pointer;
-  }
-  .sidebarChannel__hash{
-      font-size: 20px;
-      padding: 15px;
-  }
-  .voice{
-      border-top: 3px solid #56575a;
-      display: flex;
-      align-items: center;
-      margin: 10px;
-  }
-  .connection{
-    color: green;
-  }
-  .voiceConnected{
-      color: green;
-      display: flex;
-      flex-direction: column;
-      margin: 10px;
-  }
-  .call{
-      display: flex;
-      flex-direction: column;
-      padding: 6px;
-      color: gray;
-      cursor: pointer;
-      margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2f3135;
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+.sideBar__top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2f3135;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  border-bottom: 3px solid #56575a;
+}
+.sidebar__channels {
+  flex: 1;
+}
+.sideBar__AddChannel {
+  cursor: pointer;
+}
 
-  }
-.callUser{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-left: 90px;
-    color: gray;
-    cursor: pointer;
-    margin-bottom: 8px;
+.sideBar__AddChannel:hover {
+  color: white;
 }
-.vertical-space{
-    margin-bottom: 15px;
+.sideBar__channelsHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2f3135;
+  align-items: center;
+  padding: 18px;
+  color: gray;
 }
-  .equqipement{
-      color: white;
-      display: flex;
-      flex-direction: column;
-      
+.sideBar__Header {
+  display: flex;
+  align-items: center;
+}
+.sidebarChannel:hover > h4 {
+  color: white;
+  background-color: #56575a;
+}
+.sidebarChannel > h4 {
+  padding-left: 25px;
+  align-items: center;
+  display: flex;
+  color: gray;
+  cursor: pointer;
+}
+.sidebarChannel__hash {
+  font-size: 20px;
+  padding: 15px;
+}
+.voice {
+  border-top: 3px solid #56575a;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.connection {
+  color: green;
+}
+.voiceConnected {
+  color: green;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.call {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  color: gray;
+  cursor: pointer;
+  margin-left: 60px;
+}
+.callUser {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 90px;
+  color: gray;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.vertical-space {
+  margin-bottom: 15px;
+}
+.equqipement {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .sideBar {
+    max-width: 300px;
+    overflow-x:hidden;
+    height: 100vh;
   }
-  
-  
+  }

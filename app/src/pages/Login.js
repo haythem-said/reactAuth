@@ -8,7 +8,6 @@ const Login = () => {
   const navigate = useNavigate();
   const errorState = useSelector((state) => state.errors);
   const [errors, setErrors] = useState("");
-  console.log("**********", errors);
   const [form, setForm] = useState("");
   const handelLogin = (e) => {
     setForm({

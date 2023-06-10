@@ -54,6 +54,8 @@ const SideBar = () => {
       <div className="voice">
         <div className="equqipement">
           <span>{selector.user.name}</span>
+          <span>Haythem Said</span>
+
         </div>
         <div className="callUser">
           <SettingsIcon />

@@ -1,0 +1,47 @@
+
+
+.card {
+  background-color: #f7f8fa;
+  border-radius: 5px 5px 5px 30px;
+  border: 3px solid rgb(239, 240, 185);
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 350px; /* La même largeur que la barre latérale */
+  overflow-y: auto;
+  > p {
+    margin-top: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+  }
+}
+
+.button {
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(243, 243, 196);
+}
+@media (max-width: 768px) {
+  .card {
+    max-width: 300px;
+    overflow-x:hidden;
+    > p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .image {
+    width: 80px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
