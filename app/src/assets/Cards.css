@@ -18,13 +18,13 @@
   }
 }
 
-.button {
+.buttonCard {
   cursor: pointer;
   margin: 10px;
   border-radius: 5px;
   background-color: rgb(243, 243, 196);
 }
-@media (max-width: 768px) {
+@media (max-width: 480) {
   .card {
     max-width: 300px;
     overflow-x:hidden;
@@ -39,9 +39,10 @@
     width: 80px;
   }
 
-  .button {
+  .buttonCard {
     font-size: 14px;
     padding: 8px 12px;
+    margin: 10px;
   }
 }
 

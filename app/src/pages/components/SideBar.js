@@ -10,31 +10,35 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "../../assets/SideBar.css";
 import { SET_USER } from "../../redux/types";
+import ButtonHero from "./Button";
 const SideBar = () => {
   const selector = useSelector((state) => state.auth);
-  const dispatch=useDispatch()
-  const UserDispatch =()=>{
-    localStorage.removeItem('jwt');
+  const dispatch = useDispatch();
+  const UserDispatch = () => {
+    localStorage.removeItem("jwt");
     dispatch({
-        type: SET_USER,
-        payload: {},
-      });
-  }
+      type: SET_USER,
+      payload: {},
+    });
+  };
 
   return (
     <div className="sideBar">
       <div className="sideBar__top">
-        <h3>Discord </h3>
-        <KeyboardArrowDownIcon />
+        <h3>Learn that you're a hero </h3>
       </div>
       <div className="sidebar__channels">
         <div className="sideBar__channelsHeader">
           <div className="sideBar__Header">
-            <KeyboardArrowDownIcon />
-            <h4>Text Channels</h4>
+            <h4>Level</h4>
           </div>
+
           <AddIcon className="sideBar__AddChannel" />
         </div>
+        <ButtonHero level={"Bignner"} path="/" />
+        <ButtonHero level={"Medium"} path="/meduim" />
+        <ButtonHero level={"Hard"} path="/hard" />
+
         <div className="sidebar__ChannelsList"></div>
       </div>
       <div className="voice">
@@ -55,7 +59,6 @@ const SideBar = () => {
         <div className="equqipement">
           <span>{selector.user.name}</span>
           <span>Haythem Said</span>
-
         </div>
         <div className="callUser">
           <SettingsIcon />

@@ -1,21 +1,21 @@
 import React from 'react'
 import "../../assets/Cards.css";
 
-const Cards = ({url,altDesc,description,readMore}) => {
-    console.log('url',url)
+const Cards = ({src,altDesc,description}) => {
   return (
     <div className="chat-room">
     <div className="card">
       <img
         className="image"
-        src={url}
+        src={src}
         alt={altDesc}
         width={100}
+        height={100}
       />
       <p>
         {description}
       </p>
-      <button className="button">{readMore}</button>
+      <button className="buttonCard">ReadMore</button>
     </div>
   </div>
   )

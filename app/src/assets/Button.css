@@ -1,0 +1,11 @@
+.button-hero {
+      background-color: #56575a;
+      width: 70%;
+      height: 60px;
+      box-shadow: 10px;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      margin: 10px;
+      
+}

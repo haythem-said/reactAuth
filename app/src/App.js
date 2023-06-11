@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { SET_USER } from "./redux/types";
 import jwtDecode from "jwt-decode";
 import store  from "./redux/store";
+import Medium from "./pages/Medium";
 
 if (localStorage.jwt) {
   const decode = jwtDecode(localStorage.jwt);
@@ -61,6 +62,7 @@ function App() {
               </AdminRouter>
             }
           />
+          <Route path="/meduim" element={<Medium />}></Route>
           <Route path="*" element={<NotFound />} />
           <Route path="/noaccess" element={<NotAccess />} />
         </Routes>
