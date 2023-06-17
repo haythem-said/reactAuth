@@ -1,13 +1,11 @@
 import React from "react";
-import { StaticUrlMedium } from "../assets/staticUrl/StaticUrl";
-import Cards from "./components/Cards";
-import SideBar from "./components/SideBar";
+import { StaticUrlMedium } from "../../assets/staticUrl/StaticUrl";
+import Cards from "./Cards";
+import SideBar from "../SideBar";
 
-const Medium = () => {
+const MediumProfile = () => {
   return (
     <div>
-      <SideBar />
-
       {StaticUrlMedium.map((e) => (
         <Cards
           src={e.url}
@@ -20,4 +18,4 @@ const Medium = () => {
   );
 };
 
-export default Medium;
+export default MediumProfile;

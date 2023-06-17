@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import AddIcon from "@mui/icons-material/Add";
-import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
-import CallIcon from "@mui/icons-material/Call";
-import DoNotDisturbOnIcon from "@mui/icons-material/DoNotDisturbOn";
-import MicIcon from "@mui/icons-material/Mic";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
-import "../../assets/SideBar.css";
-import { SET_USER } from "../../redux/types";
-import ButtonHero from "./Button";
+import "../assets/SideBar.css";
+import { SET_USER } from "../redux/types";
+import ButtonHero from "./components/Button";
 const SideBar = () => {
+  const [domaineWeb, setDomaineWeb] = useState(false);
+  const [domaineMobile, setDomaineMobile] = useState(false);
+
   const selector = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const UserDispatch = () => {
@@ -21,39 +19,39 @@ const SideBar = () => {
       payload: {},
     });
   };
-
+  const handelClickWeb = () => {
+    setDomaineWeb(!domaineWeb);
+  };
+  const handelClickMobile = () => {
+    setDomaineMobile(!domaineMobile);
+  };
   return (
     <div className="sideBar">
       <div className="sideBar__top">
-        <h3>Learn that you're a hero </h3>
+        <h3>Just In Time Training!! </h3>
       </div>
       <div className="sidebar__channels">
         <div className="sideBar__channelsHeader">
           <div className="sideBar__Header">
-            <h4>Level</h4>
+            <h4>Domaine</h4>
           </div>
-
           <AddIcon className="sideBar__AddChannel" />
         </div>
-        <ButtonHero level={"Bignner"} path="/" />
-        <ButtonHero level={"Medium"} path="/meduim" />
-        <ButtonHero level={"Hard"} path="/hard" />
+        <h4 className="button-domaine" onClick={handelClickWeb}>
+          WEB
+        </h4>
+
+        {domaineWeb ? (
+          <>
+            <ButtonHero level={"Bignner"} path="/" />
+            <ButtonHero level={"Medium"} path="/meduim" />
+            <ButtonHero level={"Hard"} path="/hard" />
+          </>
+        ) : (
+          ""
+        )}
 
         <div className="sidebar__ChannelsList"></div>
-      </div>
-      <div className="voice">
-        <div className="connection">
-          <SignalCellularAltIcon />
-        </div>
-        <div className="voiceConnected">
-          <span>Voice</span> Connected
-        </div>
-        <div className="call">
-          <DoNotDisturbOnIcon />
-          <div className="vertical-space" />
-
-          <CallIcon />
-        </div>
       </div>
       <div className="voice">
         <div className="equqipement">

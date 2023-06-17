@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   bottom: 0;
+  overflow: auto;
 }
 .sideBar__top {
   display: flex;
@@ -96,6 +97,7 @@
   display: flex;
   flex-direction: column;
 }
+
 @media (max-width: 768px) {
   .sideBar {
     max-width: 300px;

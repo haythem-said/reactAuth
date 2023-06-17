@@ -1,51 +1,20 @@
-/* .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.chat {
+  display: flex;
+  background-image: url("https://www.efrontlearning.com/blog/wp-content/uploads/2017/10/EFRONT_20171019_1200x628-810x424.png");
+  z-index: -1;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* animation: animatedBackground 60s infinite; */
+}
+/* @keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
   }
-  
-  h1 {
-    text-align: center;
-    color: #333333;
+  50% {
+    background-position: 100% 0;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
+  100% {
+    background-position: 0 0;
   }
-  
-  label {
-    margin-bottom: 10px;
-    color: #666666;
-  }
-  
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    border: 0;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-   */
-   .chat{
-    display: flex;
-   }
+} */

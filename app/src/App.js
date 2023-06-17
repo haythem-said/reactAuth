@@ -4,16 +4,17 @@ import PrivateRouter from "./componentsRouter/PrivateRouter";
 import Login from "./pages/Login";
 import NotAccess from "./pages/NoAccess";
 import NotFound from "./pages/NotFound";
-import Profile from "./pages/Profile";
+import ProfileBegginner from "./pages/ProfileBegginner";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
-import { BrowserRouter, Route, Routes ,Redirect} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Redirect } from "react-router-dom";
 import LoginRouter from "./componentsRouter/LoginRouter";
 import { useSelector } from "react-redux";
 import { SET_USER } from "./redux/types";
 import jwtDecode from "jwt-decode";
-import store  from "./redux/store";
-import Medium from "./pages/Medium";
+import store from "./redux/store";
+import ProfileMedium from "./pages/ProfileMedium";
+import ProfileHard from "./pages/ProfileHard";
 
 if (localStorage.jwt) {
   const decode = jwtDecode(localStorage.jwt);
@@ -28,13 +29,13 @@ function App() {
   };
   return (
     <div>
-      <BrowserRouter >
+      <BrowserRouter>
         <Routes>
           <Route
             path="/"
             element={
               // <PrivateRouter user={user}>
-                <Profile />
+              <ProfileBegginner />
               // </PrivateRouter>
             }
           />
@@ -62,8 +63,9 @@ function App() {
               </AdminRouter>
             }
           />
-          <Route path="/meduim" element={<Medium />}></Route>
+          <Route path="/meduim" element={<ProfileMedium />}></Route>
           <Route path="*" element={<NotFound />} />
+          <Route path='/hard' element={<ProfileHard />}></Route>
           <Route path="/noaccess" element={<NotAccess />} />
         </Routes>
       </BrowserRouter>
