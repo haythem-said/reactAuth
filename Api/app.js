@@ -9,7 +9,7 @@ const passport=require('passport')
 var app = express();
 app.use(passport.initialize())
 require('./security/passport')(passport)
-mongoose.connect(process.env.MONGOOSE).then(()=>console.log("connected")).catch((err)=>console.log(err.message))
+mongoose.connect(process.env.MONGOOSE).then(()=>console.log("connecteddd")).catch((err)=>console.log(err.message))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

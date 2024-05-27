@@ -35,7 +35,7 @@ function App() {
             path="/"
             element={
               // <PrivateRouter user={user}>
-              <ProfileBegginner />
+              <Login />
               // </PrivateRouter>
             }
           />
@@ -65,7 +65,7 @@ function App() {
           />
           <Route path="/meduim" element={<ProfileMedium />}></Route>
           <Route path="*" element={<NotFound />} />
-          <Route path='/hard' element={<ProfileHard />}></Route>
+          <Route path="/hard" element={<ProfileHard />}></Route>
           <Route path="/noaccess" element={<NotAccess />} />
         </Routes>
       </BrowserRouter>

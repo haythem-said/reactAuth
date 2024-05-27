@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+   image: node:16
+   container_name: api
+   working_dir: /app
+   command: npm run start
+   ports:
+    - "5000:5000"
+   volumes:
+   - './Api/:/app' 
+  web: 
+   image: node:16
+   container_name: web
+   working_dir: /src
+   command: npm start
+   ports:
+    - "3000:3000"
+   volumes:
+   - './app/:/src'  
+
